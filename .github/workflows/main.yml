@@ -28,7 +28,7 @@ jobs:
       # Runs a single command using the runners shell
       - name: Setup nasm
         run: tar xvf nasm-2.15.05.tar.gz
-      - run: cd nasm-2.15.05.tar.gz
+      - run: cd nasm-2.15.05
       - run: ./configure
       - run: make
       - run: make install
