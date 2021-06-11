@@ -1,4 +1,4 @@
-assume cs:code,ds:data
+assume [cs:code] , [ds:data]
 
 data segment ;数据段
     string db 'Hello,World!$'
