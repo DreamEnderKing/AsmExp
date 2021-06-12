@@ -8,7 +8,7 @@ section .text
         mov edx, msglen             ; 要输出的字符串长度
         syscall                     ; 系统调用
         mov eax, 60                 ; sys_exit的系统调用编号为60
-        xor edi, rdi                ; exit 0
+        xor edi, edi                ; exit 0
         syscall
 
 section .data
