@@ -1,18 +1,16 @@
-assume [cs:code] , [ds:data]
+    global _start
 
-data segment ;数据段
-    string db 'Hello,World!$'
-data ends
+    section .text
+_start:
+    mov rax, 1                  ; sys_write的系统调用编号为1
+    mov rdi, 1                  ; 文件句柄1对应stdout
+    mov rsi, msg                ; 要输出的字符串地址
+    mov rdx, msglen             ; 要输出的字符串长度
+    syscall                     ; 系统调用
+    mov rax, 60                 ; sys_exit的系统调用编号为60
+    xor rdi, rdi                ; exit 0
+    syscall
 
-code segment ;代码段
-  start:
-    mov ax,data ;获取段基址
-    mov ds,ax ;将段基址送入寄存器
-    mov dx,offset string
-    mov ah,9
-    int 21h
-    mov ah,4ch
-    int 21h
-code ends
-
-end start
+    section .data
+msg: db "Hello, World!", 10     ; ascii表中10对应换行符
+msglen: equ $ - msg             ; $ 等于当前行开头的地址
