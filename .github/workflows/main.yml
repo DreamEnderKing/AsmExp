@@ -31,4 +31,4 @@ jobs:
 
       # Runs a set of commands using the runners shell
       - name: Execute
-        run: nasm -f elf64 a01.asm && ld -o a01 a01.o -mcmodel=kernel && ./a01
+        run: nasm -f elf32 a01.asm && ld -o a01 a01.o && ./a01
