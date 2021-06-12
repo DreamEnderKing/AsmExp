@@ -2,13 +2,13 @@ global _start
 
 section .text
     _start:
-        mov ax, 1                  ; sys_write的系统调用编号为1
-        mov di, 1                  ; 文件句柄1对应stdout
-        mov si, msg                ; 要输出的字符串地址
-        mov dx, msglen             ; 要输出的字符串长度
+        mov eax, 1                  ; sys_write的系统调用编号为1
+        mov edi, 1                  ; 文件句柄1对应stdout
+        mov esi, msg                ; 要输出的字符串地址
+        mov edx, msglen             ; 要输出的字符串长度
         syscall                     ; 系统调用
-        mov ax, 60                 ; sys_exit的系统调用编号为60
-        xor di, di                ; exit 0
+        mov eax, 60                 ; sys_exit的系统调用编号为60
+        xor edi, edi                ; exit 0
         syscall
 
 section .data
