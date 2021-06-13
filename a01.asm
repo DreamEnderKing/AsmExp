@@ -6,9 +6,9 @@ section .text
         mov edx, msglen             ; 要输出的字符串长度
         mov ecx, edx                ; 全部转换为大写
         mov ebx, 0
-      c:mov ax, [cs:ebx+esi]
-        and ax, 11011111b
-        mov [cs:ebx+esi], ax
+      c:mov al, [cs:ebx+esi]
+        and al, 11011111b
+        mov [cs:ebx+esi], al
         add ebx, 1
         loop c
         mov eax, 1                  ; sys_write的系统调用编号为1
