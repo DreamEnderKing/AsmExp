@@ -6,10 +6,10 @@ section .text
         mov edx, msglen             ; 要输出的字符串长度
         mov ecx, edx                ; 全部转换为大写
         mov ebx, 0
-      c:mov eal, [cs:bx+si]
+      c:mov eal, [cs:ebx+esi]
         and eal, 11011111b
-        mov [cs:bx+si], eal
-        add bx, 1
+        mov [cs:ebx+esi], eal
+        add ebx, 1
         loop c
         mov eax, 1                  ; sys_write的系统调用编号为1
         mov edi, 1                  ; 文件句柄1对应stdout
