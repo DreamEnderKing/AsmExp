@@ -8,9 +8,9 @@ section .text
         mov edx, msglen             ; 要输出的字符串长度
         mov ecx, edx                ; 全部转换为大写
         mov edi, 0
-      c:mov ebl, [si+di]
+      c:mov ebl, [cs:si+di]
         and ebl, 11011111b
-        mov [si+bi], ebl
+        mov [cs:si+bi], ebl
         add di, 1
         loop c
         syscall                     ; 系统调用
