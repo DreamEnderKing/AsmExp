@@ -4,7 +4,7 @@ section .text
     _start:
         mov eax, stack               ; 设置堆栈
         mov ss, eax
-        mov esp, 20h
+        mov sp, 20h
         push 41h
         mov esi, msg                ; 要输出的字符串地址
         mov edx, msglen             ; 要输出的字符串长度
@@ -25,7 +25,7 @@ section .text
         syscall
 
 section .data
-    arg: times 16 dd 0               ; 参数列表
-    stack: times 16 dd 0             ; 堆栈指针
+    arg: times 16 dw 0               ; 参数列表
+    stack: times 16 dw 0             ; 堆栈指针
     msg: db "Hello World!123", 10    ; ascii表中10对应换行符
     msglen: equ $ - msg              ; $ 等于当前行开头的地址
