@@ -25,7 +25,7 @@ section .text
         syscall
 
 section .data
-    arg: dd 16 dup (0)               ; 参数列表
-    stack: dd 16 dup(0)              ; 堆栈指针
+    arg: times 16 dd 0               ; 参数列表
+    stack: times 16 dd 0             ; 堆栈指针
     msg: db "Hello World!123", 10    ; ascii表中10对应换行符
     msglen: equ $ - msg              ; $ 等于当前行开头的地址
