@@ -2,7 +2,7 @@ global _start
 
 section .text
     _start:
-        push word msg
+        push msg
         pop rsi                     ; 要输出的字符串地址
         mov edx, msglen             ; 要输出的字符串长度
         mov ecx, edx                ; 全部转换为大写
