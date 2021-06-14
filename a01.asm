@@ -4,7 +4,7 @@ section .text
     _start:
         mov eax, stack               ; 设置堆栈
         mov ss, eax
-        mov esp, 40h
+        mov esp, 20h
         push 41h
         mov esi, msg                ; 要输出的字符串地址
         mov edx, msglen             ; 要输出的字符串长度
