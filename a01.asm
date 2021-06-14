@@ -2,9 +2,9 @@ global _start
 
 section .text
     _start:
-        mov ax, stack               ; 设置堆栈
-        mov ss, ax
-        mov sp, 40h
+        mov eax, stack               ; 设置堆栈
+        mov ess, eax
+        mov esp, 40h
         push 41h
         mov esi, msg                ; 要输出的字符串地址
         mov edx, msglen             ; 要输出的字符串长度
