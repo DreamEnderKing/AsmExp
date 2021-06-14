@@ -2,7 +2,7 @@ global _start
 
 section .text
     _start:
-        mov eax, stack               ; 设置堆栈
+        ;mov eax, stack               ; 设置堆栈
         ;mov ss, eax
         ;mov sp, 20h
         push msg
